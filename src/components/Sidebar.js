@@ -4,7 +4,7 @@ import { BUTTON_VALUE } from './utils/constants';
 const Sidebar = ({ currentStep }) => {
     const buttonsValue = BUTTON_VALUE;
     return (
-        <div className='h-screen w-4/12 flex flex-col rounded-2xl'>
+        <div className='h-screen md:w-4/12 lg:w-3/12 flex flex-col rounded-2xl'>
             <img
                 className="opacity-60 relative z-1 rounded-3xl"
                 src='https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjExMDYtd2FuLTEzLXguanBn.jpg'

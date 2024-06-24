@@ -18,3 +18,9 @@ export  const BUTTON_VALUE=[
         heading:"Step-4"
     }
 ]
+
+export const PLANS = [
+    { name: 'Arcade', icon: '🕹️', monthlyCost: '$9/mo', yearlyCost: '$90/yr' },
+    { name: 'Advanced', icon: '⚽️', monthlyCost: '$12/mo', yearlyCost: '$120/yr' },
+    { name: 'Pro', icon: '🏏', monthlyCost: '$15/mo', yearlyCost: '$150/yr' }
+];
