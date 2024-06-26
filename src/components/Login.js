@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { validate } from './utils/validate';
+import { validate } from '../utils/validate';
 import { Link } from 'react-router-dom';
 
 

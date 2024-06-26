@@ -7,7 +7,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './components/Login';
 import SelectPlan from './components/SelectPlan';
 import { Provider } from 'react-redux';
-import app from './components/utils/app';
+import app from './utils/app';
+import AddOns from './components/AddOns';
+import Summary from './components/Summary';
 
 const appRouter = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const appRouter = createBrowserRouter([
       {
         path: "select",
         element: <SelectPlan />
+      },
+      {
+        path:"addons",
+        element:<AddOns/>
+      },
+      {
+        path:"summary",
+        element:<Summary/>
       }
     ]
   }

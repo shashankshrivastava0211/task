@@ -24,3 +24,21 @@ export const PLANS = [
     { name: 'Advanced', icon: '⚽️', monthlyCost: '$12/mo', yearlyCost: '$120/yr' },
     { name: 'Pro', icon: '🏏', monthlyCost: '$15/mo', yearlyCost: '$150/yr' }
 ];
+
+export const  ADD_ONS = [
+    {
+        plan: "Online service",
+        description: "access to multiplayer game",
+        cost: "+1$/mo"
+    },
+    {
+        plan: "Larger storage",
+        description: "extra 1 tb of cloud space",
+        cost: "+2$/mo"
+    },
+    {
+        plan: "Customizable profile",
+        description: "custom theme on your profile",
+        cost: "+2$/mo"
+    },
+];

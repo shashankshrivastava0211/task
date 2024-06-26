@@ -1,5 +1,5 @@
 import React from 'react';
-import { BUTTON_VALUE } from './utils/constants';
+import { BUTTON_VALUE } from '../utils/constants';
 
 const Sidebar = ({ currentStep }) => {
     const buttonsValue = BUTTON_VALUE;

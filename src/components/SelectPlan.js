@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectPlan } from './utils/cartSlice';
-import { PLANS,  } from './utils/constants';
+import { selectPlan } from '../utils/cartSlice';
+import { PLANS,  } from '../utils/constants';
 
 const SelectPlan = () => {
     const [isYearly, setIsYearly] = useState(false);
@@ -15,7 +15,7 @@ const SelectPlan = () => {
     
 
     const handlePlanSelect = (plan) => {
-        const cost = isYearly ? plan.yearlyCost : plan.monthlyCost;
+        const cost = isYearly ? plan.yearlyCost : plan.monthlyCost;//storing for montly or yearly
         dispatch(selectPlan({name:plan.name , cost}))
     };
 
@@ -58,7 +58,7 @@ const SelectPlan = () => {
             </div>
             <div className='pt-40 flex gap-11'>
                 <Link to={"/"}><button className='pt-2 my-2 block w-16 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-200'>Prev</button></Link>
-                <Link to={"/select"}> <button className='pt-2 my-2 block w-16 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-200'>Next</button></Link>
+                <Link to={"/addons"}> <button className='pt-2 my-2 block w-16 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-200'>Next</button></Link>
             </div>
         </div>
     );
