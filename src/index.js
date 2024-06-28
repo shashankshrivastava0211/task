@@ -1,42 +1,67 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Login from './components/Login';
-import SelectPlan from './components/SelectPlan';
 import { Provider } from 'react-redux';
 import app from './utils/app';
-import AddOns from './components/AddOns';
-import Summary from './components/Summary';
-import Checkout from './components/Checkout';
+
+// Lazy-loaded components
+const App = React.lazy(() => import('./App'));
+const Login = React.lazy(() => import('./components/Login'));
+const SelectPlan = React.lazy(() => import('./components/SelectPlan'));
+const AddOns = React.lazy(() => import('./components/AddOns'));
+const Summary = React.lazy(() => import('./components/Summary'));
+const Checkout = React.lazy(() => import('./components/Checkout'));
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <App />
+      </Suspense>
+    ),
     children: [
       {
         path: "/",
-        element: <Login />
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Login />
+          </Suspense>
+        )
       },
       {
         path: "select",
-        element: <SelectPlan />
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <SelectPlan />
+          </Suspense>
+        )
       },
       {
         path:"addons",
-        element:<AddOns/>
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <AddOns />
+          </Suspense>
+        )
       },
       {
         path:"summary",
-        element:<Summary/>
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Summary />
+          </Suspense>
+        )
       },
       {
         path:"/checkout",
-        element:<Checkout/>
-        
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Checkout />
+          </Suspense>
+        )
       }
     ]
   }
@@ -46,16 +71,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={app}>
-
-    
-    <RouterProvider router={appRouter}>
-      <App />
-    </RouterProvider>
+      <RouterProvider router={appRouter}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <App />
+        </Suspense>
+      </RouterProvider>
     </Provider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
