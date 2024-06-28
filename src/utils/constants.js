@@ -20,9 +20,9 @@ export  const BUTTON_VALUE=[
 ]
 
 export const PLANS = [
-    { name: 'Arcade', icon: '🕹️', monthlyCost: '$9/mo', yearlyCost: '$90/yr' },
-    { name: 'Advanced', icon: '⚽️', monthlyCost: '$12/mo', yearlyCost: '$120/yr' },
-    { name: 'Pro', icon: '🏏', monthlyCost: '$15/mo', yearlyCost: '$150/yr' }
+    { name: 'Arcade', icon: '🕹️', monthlyCost: 9, yearlyCost: 90 },
+    { name: 'Advanced', icon: '⚽️', monthlyCost: 12, yearlyCost: 120 },
+    { name: 'Pro', icon: '🏏', monthlyCost: 15, yearlyCost: 150 }
 ];
 
 export const  ADD_ONS = [

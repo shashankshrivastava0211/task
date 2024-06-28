@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import app from './utils/app';
 import AddOns from './components/AddOns';
 import Summary from './components/Summary';
+import Checkout from './components/Checkout';
 
 const appRouter = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const appRouter = createBrowserRouter([
       {
         path:"summary",
         element:<Summary/>
+      },
+      {
+        path:"/checkout",
+        element:<Checkout/>
+        
       }
     ]
   }

@@ -33,7 +33,7 @@ const SelectPlan = () => {
                         <div className='text-2xl'>{plan.icon}</div>
                         <div className='text-center'>
                             <p className='font-semibold'>{plan.name}</p>
-                            <p className='text-gray-500'>{isYearly ? plan.yearlyCost : plan.monthlyCost}</p>
+                            <p className='text-gray-500'>{isYearly ? "$" +plan.yearlyCost + "/year" : "$" +plan.monthlyCost + "/month"} </p>
                         </div>
                     </div>
                 ))}

@@ -5,6 +5,7 @@ const cartSlice = createSlice({
     initialState: {
         selectedPlan: null,
         selectedAddOns: [],
+        user: null,
     },
     reducers: {
         selectPlan: (state, action) => {
@@ -13,8 +14,11 @@ const cartSlice = createSlice({
         selectAddOns: (state, action) => {
             state.selectedAddOns = action.payload;
         },
+        addUser: (state, action) => {
+            state.user = action.payload;
+        },
     },
 });
 
-export const { selectPlan, selectAddOns } = cartSlice.actions;
+export const { selectPlan, selectAddOns, addUser } = cartSlice.actions;
 export default cartSlice.reducer;
