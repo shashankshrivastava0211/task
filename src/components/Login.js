@@ -15,6 +15,7 @@ const Login = () => {
     const [userState, setUser] = useState("default");
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [eye, setEye] = useState(true);
 
     const handleNext = async (e) => {
         e.preventDefault(); // Prevent form submission
@@ -50,8 +51,12 @@ const Login = () => {
         }
     };
 
+    const handlePasswordToggle = () => {
+        setEye(!eye);
+    };
+
     return (
-        <div className='w-full md:w-6/12 h-screen  p-4'>
+        <div className='w-full md:w-6/12 h-screen p-4'>
             <div className='w-full md:w-6/12 h-auto rounded-xl md:flex justify-center md:items-center flex-col'>
                 <div>user: {userState}</div>
                 <form onSubmit={handleNext} className='w-full sm:w-3/4'>
@@ -60,7 +65,12 @@ const Login = () => {
                     <p className='font-bold text-red-500'>{error}</p>
                     <input type='text' placeholder='Enter your E-mail' ref={eMail} className='p-2 my-2 block w-full rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200' />
                     <p className='font-bold text-red-500'>{errorPassword}</p>
-                    <input type='password' placeholder='Enter your password' ref={password} className='p-2 my-2 block w-full rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200' />
+                    <div className='relative'>
+                        <input type={eye ? "password" : "text"} placeholder='Enter your password' ref={password} className='p-2 my-2 block w-full rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200' />
+                        <button type="button" onClick={handlePasswordToggle} className='absolute inset-y-0 right-0 px-3 py-2'>
+                            {eye ? 'Show' : 'Hide'}
+                        </button>
+                    </div>
                     <div className="pt-4 md:pt-20 flex justify-end">
                         <button className='py-2 px-4 my-2 block w-16 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-200' type="submit">Next</button>
                     </div>
