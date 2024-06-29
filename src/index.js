@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import app from './utils/app';
+import Practice from './components/Practice';
 
 // Lazy-loaded components
 const App = React.lazy(() => import('./App'));
@@ -62,6 +63,10 @@ const appRouter = createBrowserRouter([
             <Checkout />
           </Suspense>
         )
+      },
+      {
+        path:"/practice",
+        element:<Practice/>
       }
     ]
   }
